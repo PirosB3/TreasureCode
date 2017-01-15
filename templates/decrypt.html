@@ -1,40 +1,38 @@
-<!DOCTYPE html>
-<html>
-   <head>
-      <title>Bootstrap 101 Template</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- Bootstrap -->
-      <link href="https://bootswatch.com/darkly/bootstrap.min.css" rel="stylesheet" media="screen">
-   </head>
-   <body>
-      <style>
-         .side-by-side2
-         {
-         float:left;
-         padding:10px 680px;
-         }
-      </style>
-      <!--display how many have entered the signature-->
-      <div class="alert alert-dismissible alert-info" align="center">
-         <strong>Heads up!</strong> Only 2/3 have submitted the signature, you can view your entitlements once all the beneficiaries have submitted the signature 
-      </div>
-      <div class="container">
-      <div class="row">
-         <div class="page-header">
-            <h1 align="center" style="font-size:400%;" id="will tracker">Buried Treasure</h1>
-            <img align="center" src="https://missionbibleclass.files.wordpress.com/2015/08/5_parables-of-treasure-and-pearl.png" />
-         </div>
-         <form action="/decrypt/execute" method="post">
-            <div class="form-group">
-               <label for="exampleInputPassword1">Data 1</label>
-               <input type="text" class="form-control" name="data1">
+{% extends "index2.html" %}
+{% block body %}
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <h2>Decrypt a Will</h2>
+        <hr class="star-primary">
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+        <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+        <form name="sentMessage" id="contactForm" novalidate action="/decrypt/execute" method="post" enctype="multipart/form-data">
+            <div class="row control-group">
+                <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label>Encrypted secret #1</label>
+                    <input value="4-6SU75Rdd4dLJfNcELZmGQA1UzRBpmK2rrQ6dxWSXb3SR3RS9YVP8Db6" type="text" class="form-control" placeholder="Public Key #1" name="data1" required data-validation-required-message="Please enter your name.">
+                    <p class="help-block text-danger"></p>
+                </div>
             </div>
-            <div class="form-group">
-               <label for="exampleInputPassword1">Data 2</label>
-               <input type="text" class="form-control" name="data2">
+            <div class="row control-group">
+                <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label>Encrypted secret #2</label>
+                    <input value="3-D79nEcUm9KRzQemtxeYsd8sd6Uof3RA5geLzFxz2aQsmy4JDrTSdLJh" type="text" class="form-control" placeholder="Public Key #2" name="data2" required data-validation-required-message="Please enter your name.">
+                    <p class="help-block text-danger"></p>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-         </form>
-      </div>
-   </body>
-</html>
+            <br>
+            <div id="success"></div>
+            <div class="row">
+                <div class="form-group col-xs-12">
+                    <button type="submit" class="btn btn-success btn-lg">Decrypt</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock body %}
