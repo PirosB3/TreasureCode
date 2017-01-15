@@ -1,0 +1,17 @@
+.top {
+    color: black;
+    background: white !important;
+}
+
+header {
+    text-align: center;
+    background: white !important;
+}
+
+.top .row {
+    background-color: white;
+}
+
+input[type='file'] {
+  opacity:0    
+}
