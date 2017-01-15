@@ -24,17 +24,17 @@
       <tbody>
          <tr>
             <th scope="row">1</th>
-            <td>{{ enc1 |truncate(29, True)  }}         [omitted for security]</td>
+            <td key="{{ enc1 }}">{{ enc1 |truncate(29, True)  }}         [omitted for security]</td>
             <td><a href="#">Download</a></td>
          </tr>
          <tr>
-            <th scope="row">1</th>
-            <td>{{ enc2 |truncate(29, True)}}           [omitted for security]</td>
+            <th scope="row">2</th>
+            <td key="{{ enc2 }}">{{ enc2 |truncate(29, True)}}           [omitted for security]</td>
             <td><a href="#">Download</a></td>
          </tr>
          <tr>
-            <th scope="row">1</th>
-            <td>{{ enc3|truncate(29, True) }}           [omitted for security]</td>
+            <th scope="row">3</th>
+            <td key="{{ enc3 }}">{{ enc3|truncate(29, True) }}           [omitted for security]</td>
             <td><a href="#">Download</a></td>
          </tr>
       </tbody>
