@@ -12,6 +12,8 @@ header {
     background-color: white;
 }
 
-input[type='file'] {
-  opacity:0    
+
+form label {
+    opacity: 1 !important;
+    padding-bottom: 23px;
 }
