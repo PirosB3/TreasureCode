@@ -65,6 +65,7 @@
     </nav>
 
     <!-- Header -->
+    {% block header %}
     <header>
         <div class="container top">
             <div class="row">
@@ -78,24 +79,13 @@
             </div>
         </div>
     </header>
+    {% endblock header %}
 
     <!-- About Section -->
     {% block about %}
     <section class="success" id="about">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>About</h2>
-                    <hr class="star-light">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                    <p>Buried Treasure enables you to store valuable information online using the security of blockchain technology.</p>
-                </div>
-                <div class="col-lg-4">
-                    <p>After you pass, your beneficiaries (or trustees) can access up-to-date information securely, instantly, and from anywhere.</p>
-                </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <a href="/#contact" class="btn btn-lg btn-outline">
                         <i class="fa fa-download"></i> Upload a new document now
