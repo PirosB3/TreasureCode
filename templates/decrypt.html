@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Bootstrap 101 Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
-  </head>
-  <body>
-    <div class="container">
-        <h1>Hello, world!</h1>
-        <form action="/decrypt/execute" method="post">
-            <input size="150" type="text" name="data1" id="data1" value="" /></br>
-            <input size="150" type="text" name="data2" id="data2" value="" /></br>
-            <input type="submit" name="submit" value="Submit" />
-        </form>
-    </div>
-  </body>
+   <head>
+      <title>Bootstrap 101 Template</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Bootstrap -->
+      <link href="https://bootswatch.com/darkly/bootstrap.min.css" rel="stylesheet" media="screen">
+   </head>
+   <body>
+      <style>
+         .side-by-side2
+         {
+         float:left;
+         padding:10px 680px;
+         }
+      </style>
+      <!--display how many have entered the signature-->
+      <div class="alert alert-dismissible alert-info" align="center">
+         <strong>Heads up!</strong> Only 2/3 have submitted the signature, you can view your entitlements once all the beneficiaries have submitted the signature 
+      </div>
+      <div class="container">
+      <div class="row">
+         <div class="page-header">
+            <h1 align="center" style="font-size:400%;" id="will tracker">Buried Treasure</h1>
+         </div>
+         <form action="/decrypt/execute" method="post">
+            <div class="form-group">
+               <label for="exampleInputPassword1">Data 1</label>
+               <input type="text" class="form-control" name="data1">
+            </div>
+            <div class="form-group">
+               <label for="exampleInputPassword1">Data 2</label>
+               <input type="text" class="form-control" name="data2">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+         </form>
+      </div>
+   </body>
 </html>
