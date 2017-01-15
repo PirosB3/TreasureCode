@@ -13,7 +13,7 @@ header {
 }
 
 
-form label {
+label {
     opacity: 1 !important;
     padding-bottom: 23px;
 }
