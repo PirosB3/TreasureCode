@@ -96,7 +96,7 @@
                     <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="#contact" class="btn btn-lg btn-outline">
+                    <a href="/#contact" class="btn btn-lg btn-outline">
                         <i class="fa fa-download"></i> Upload a new document now
                     </a>
                 </div>
@@ -107,6 +107,7 @@
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
+            {% block body %}
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Add a new file</h2>
@@ -163,6 +164,7 @@
                     </form>
                 </div>
             </div>
+            {% endblock body %}
         </div>
     </section>
 
