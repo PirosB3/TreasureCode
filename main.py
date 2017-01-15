@@ -1,7 +1,7 @@
 import binascii
 import ipfsapi
 from secretsharing import BitcoinToB58SecretSharer
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Response
 from Crypto.PublicKey import RSA
 
 api = ipfsapi.connect('127.0.0.1', 5001)
@@ -46,10 +46,24 @@ def upload():
     encrypted = [k.encrypt(e, 1024)[0].encode('hex') for k, e in zip(pubs, encrypted_keys)]
     return render_template('res.html', enc1=encrypted[0], enc2=encrypted[1], enc3=encrypted[2])
 
-# def upload_file_to_ipfs(file_stream):
-    # hash_path = 
+
+@app.route("/decrypt")
+def decrypt():
+    return render_template('decrypt.html')
+
+
+@app.route("/decrypt/execute", methods=['POST'])
+def submit():
+    data1 = request.form['data1']
+    data2 = request.form['data2']
+
+    ipfs_path = BitcoinToB58SecretSharer.recover_secret(map(str, [data1, data2]))
+    data = api.cat(ipfs_path)
+
+    resp = Response(data)
+    resp.headers['Content-Type'] = 'application/pdf'
+    return resp
 
 
 if __name__ == "__main__":
     app.run()
-
